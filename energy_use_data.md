@@ -334,7 +334,8 @@ In this section subcontinent countries will be examined. the list of countries a
 df_sub = df_clean[df_clean["Area"].isin(["India", "Pakistan", 'Bangladesh'])]
 df_sub.head()
 ```
-![image](images/Table1.png)
+
+![image](images/Table1.PNG)
 
 ```
 # Shape of selected subcontinents countries dataframe
@@ -351,7 +352,7 @@ df_sub.describe()
 ```
 > **OutPut:**
 
-![image](images/Table2.png)
+![image](images/Table2.PNG)
 
 ### Visualizing Subcontinents Countries Role in CO2 emissions
 
@@ -369,7 +370,7 @@ plt.xlabel("Year", fontsize=14)
 plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 plt.show()
 ```
-![image](images/Plot8.png)
+![image](images/plot8.png)
 
 #### Subcontinent Countries (Combine) CO2 Emissions over the years by Energy Type
 
@@ -385,7 +386,7 @@ plt.xlabel("Year", fontsize=14)
 plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 plt.show()
 ```
-![image](images/Plot9.png)
+![image](images/plot9.png)
 
 #### Study Each Subcontinent Country and Their Comparison 
 
@@ -403,7 +404,7 @@ plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 
 plt.show()
 ```
-![image](images/Plot10.png)
+![image](images/plot10.png)
 
 ```pyhton
 # Groupby Bangladesh and Item and plot the mean in horizontal bar chart
@@ -416,7 +417,7 @@ plt.xlabel("Year", fontsize=14)
 plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 plt.show()
 ```
-![image](images/Plot11.png)
+![image](images/plot11.png)
 
 #### India
 
@@ -434,7 +435,7 @@ plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 plt.show()
 ```
 
-![image](images/Plot12.png)
+![image](images/plot12.png)
 
 ```pyhton
 # Groupby India and Item and plot the mean in horizontal bar chart
@@ -447,7 +448,7 @@ plt.xlabel("Year", fontsize=14)
 plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 plt.show()
 ```
-![image](images/Plot13.png)
+![image](images/plot13.png)
 
 #### Pakistan
 
@@ -464,7 +465,7 @@ plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 
 plt.show()
 ```
-![image](images/Plot14.png)
+![image](images/plot14.png)
 
 ```pyhton
 # Groupby Pakistan and Item and plot the mean in horizontal bar chart
@@ -478,7 +479,7 @@ plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 plt.show()
 ```
 
-![image](images/Plot15.png)
+![image](images/plot15.png)
 
 #### Combine
 
@@ -496,7 +497,7 @@ plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 
 plt.show()
 ```
-![image](images/Plot16.png)
+![image](images/plot16.png)
 
 ```pyhton
 # Comparison of CO2 emissions between subcontinents countries
@@ -510,7 +511,7 @@ plt.ylabel("CO2 emissions - absolute number in kilotones ", fontsize=14)
 plt.show()
 ```
 
-![image](images/Plot17.png)
+![image](images/plot17.png)
 
 
 ## Conclusion
