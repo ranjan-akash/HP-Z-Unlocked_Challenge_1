@@ -440,7 +440,18 @@ df_selected.groupby("Year").sum().sort_values(by="Value", ascending=False)
 
 - Minimum area burned in a year is in year **1997** with value of **3.143008e+05**
 
-## 4. Graphical analysis of selected countries
+### Graph of yearly area burned in subcontinent countries
+
+```python
+plt.figure(figsize=(5,3), dpi=150, linewidth=2)
+sns.barplot(x="Year",y='Value',data=sy, palette="winter")
+plt.xticks(rotation=90)
+plt.title('Land affected by fires yearly in subcontinent')
+```
+
+![](Subcontinent%20Land%20affected%20yearly.png)
+
+## 4. Line graph of subcontinent countries
 
 - Graphical analysis of selected countries
 
