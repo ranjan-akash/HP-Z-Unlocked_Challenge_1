@@ -7,9 +7,12 @@
 
 ## About the Dataset
 
-- Data is taken from [Fao website](https://www.fao.org/faostat/en/#data/GI). All countries available were selected and Year: 1990 to 2019.
+- Data is taken from [Fao website](https://www.fao.org/faostat/en/#data/GI). All countries available were selected covering 30 years from 1990 to 2019, for Forests and Savanna fire data.
 
 ## Steps performed
+- EDA was perfomed in two steps
+    1. EDA on whole dataset
+    2. EDA on subcontinent countries
 
 ## 1. Import Libraries
 
@@ -129,7 +132,7 @@ Seven different items are available in the dataset and their count are:
 >
 >Woody savanna            6807
 
-# **Insights of Datasets**
+# **EDA on whole Dataset**
 
 ## 1. Land affected by fires yearly
 
@@ -341,13 +344,13 @@ df.groupby(["Year","Area","Item"]).sum().sort_values(by="Value", ascending=False
 2017|	Australia	|Open shrubland	|	5.209256e+07
 2006|	Australia	|Grassland	|	5.006097e+07
 
-- For most Forest and Savanna burned in a year in a country Open shrubland has the highest value of **1.052085e+08** in year **2011** in Australia
+- For most Forest and Savanna burned in a year in a country Open shrubland has the highest value which is **1.052085e+08** in year **2011** in Australia
 
 - Open shrubland and Grassland are most burned item type in a year in a country.
 
-- Both item type are most burned Australia in a year.
+- Both item type are most burned in Australia in a year.
 
-# **Selected countries Analysis**
+# **EDA on Subcontinent countries**
 
 ## 1.Select countries
 
@@ -467,25 +470,40 @@ fig.show()
 
 # **Conclusion**
 
-- ## 1. For World
+## 1. For World
 
-    - The highest value of land burned was in year **2012** which **8.320688e+08**
-    - The lowest value of land burned was in year **1997** which is **3.022354e+08**
-    - **Australia** is most affected country with area affected was **2.650662e+09**
-    - **Savanna** is most burned item type with value of **1.957280e+09**
-    - **Closed shrubland** is least burned item type with value of **9.897531e+07**
-    - For most Forest and Savanna burned in a year in a country **Australia** has 10 top values of the burned area in a country in a year.
-    - For most Forest and Savanna burned in a year **Savanna** has the highest value which is **3.487667e+08** in year **2005**
-    - For most Forest and Savanna burned in a year in a country **Open shrubland** has the highest value which is **1.052085e+08** in year **2011** in **Australia**
-    - **Open shrubland** and **Savanna** are in top 10  item type most burned in **Australia** in a year.
+- The highest value of burned area was in year **2012** which **8.320688e+08**
 
+- The lowest value of burned area was in year **1997** which is **3.022354e+08**
 
+- A **sudden increase** in burned area value was observed after year **2000**
 
-- ## 2. Subcontinent countries Analysis
+- From the available data **year 2002 to year 2012** has observes an increase burned area value, and a decrease after year 2012
 
-    - **India** is the most affected country from Subcontinent with value of **6.546250e+07**
-    - **Pakistan** is least affected country from Sub continent with value of **1.015368e+06**
-    - From the subcontinent countries, the most burned item type was **Other forest** with value of **2.952522e+07**
-    - Least burned item type is **Closed shrubland** with value of **5.624728e+04**
-    - Most area burned in a year in subcontinent was in year **2009** having value **5.705159e+06**
-    - Minimum area burned in a year in subcontinent was in year **1997** having value **3.143008e+05**
+- **Australia** is most affected country with area affected was **2.650662e+09**
+
+- **Savanna** is most burned item type with value of **1.957280e+09**
+
+- **Closed shrubland** is least burned item type with value of **9.897531e+07**
+
+- For most Forest and Savanna burned in a year in a country **Australia** has 10 top values of the burned area in a country in a year.
+
+- For most Forest and Savanna burned in a year **Savanna** has the highest value which is **3.487667e+08** in year **2005**
+
+- For most Forest and Savanna burned in a year in a country **Open shrubland** has the highest value which is **1.052085e+08** in year **2011** in **Australia**
+
+- **Open shrubland** and **Savanna** are in top 10  item type most burned in **Australia** in a year.
+
+## 2. Subcontinent countries Analysis
+
+- **India** is the most affected country from Subcontinent with value of **6.546250e+07**
+
+- **Pakistan** is least affected country from Sub continent with value of **1.015368e+06**
+
+- From the subcontinent countries, the most burned item type was **Other forest** with value of **2.952522e+07**
+
+- Least burned item type is **Closed shrubland** with value of **5.624728e+04**
+
+- Most area burned in a year in subcontinent was in year **2009** having value **5.705159e+06**
+
+- Minimum area burned in a year in subcontinent was in year **1997** having value **3.143008e+05**
