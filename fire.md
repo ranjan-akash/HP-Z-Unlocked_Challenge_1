@@ -7,7 +7,7 @@
 
 ## About the Dataset
 
-- Data is taken from [Fao website](https://www.fao.org/faostat/en/#data/GI). All countries available were selected covering 30 years from 1990 to 2019, for Forests and Savanna fire data.
+- Dataset was given by  taken from [Fao website](https://www.fao.org/faostat/en/#data/GI). All countries available were selected covering 30 years from 1990 to 2019, for Forests and Savanna fire data.
 
 ## Steps performed
 - EDA was perfomed in two steps
