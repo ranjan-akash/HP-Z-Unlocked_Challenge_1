@@ -1,6 +1,6 @@
 # Z by HP Unlocked Challenge 1
 Unlocked Challenge 1 - Data Visualization 
-
+Special Thanks to Dr Aamar Tufail von Universität zu Kiel & the team , Who worked hard on this challenge.
 ## The Task
 The challenge is to analyze the ecological data that is included in the repo. 
 
