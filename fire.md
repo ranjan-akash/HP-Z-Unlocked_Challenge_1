@@ -20,6 +20,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 ```
 
 ## 2. Import dataset
@@ -279,6 +280,25 @@ df.groupby(["Year","Area"]).sum().sort_values(by="Value", ascending=False).head(
 
 - For most Forest and Savanna burned in a year in a country Australia has 10 top values of the burned area in a country in a year.
 
+### Graphical Representation of maximum area burned in a year in a country
+
+--  Groupby Area, Area code and year and sum the values and rest index will give sum of all the tyoes of forest burned in a year in a country
+
+```python
+df1 = df.groupby(["Area", "Area Code (ISO3)", "Year"])["Value"].sum().reset_index()
+df1.head()
+```
+
+- Ploting the graph
+
+```python
+plt.figure(figsize=(15,3), dpi=150)
+fig = px.line(df1, x="Year", y="Value",color='Area', title='World Burned Area')
+fig.show()
+```
+
+![](newplot.png)
+
 ## 5. Item type burned most in a year
 
 - Item type burned most in a year
@@ -331,25 +351,24 @@ df.groupby(["Year","Area","Item"]).sum().sort_values(by="Value", ascending=False
 
 ## 1.Select countries
 
-- Select countries
+- Select sub-continent countries
 
 ```python
-df_selected = df[df["Area"].isin(["India", "Afghanistan", "Pakistan","Bangladesh"])]
+df_selected = df[df["Area"].isin(["India", "Pakistan","Bangladesh"])]
 ```
 
-- Afganistan, India, Pakistan and Bangladesh are the selected countries in south Asia
+- India, Pakistan and Bangladesh are the selected countries in south Asia
 
 | Area | Value|
 |:-------|------:|
 India	|	6.546250e+07
 Bangladesh	| 2.536032e+06
 Pakistan	|	1.015368e+06
-Afghanistan	|	1.004836e+06
 
 
-- From the above analysis we can say that India is the most affected country from Selected countries in south Asia with value of **6.546250e+07**
+- From the above analysis we can say that **India** is the most affected country in subcontinent with value of **6.546250e+07**
 
-- Afghanistan is least affected country from Selected countries in south Asia with value of **1.004836e+06**
+- **Pakistan** is least affected country in subcontinent with value of **1.015368e+06**
 
 ## 2. Item type burned by fire in selected countries
 
@@ -361,15 +380,15 @@ df_selected.groupby(["Item"]).sum().sort_values(by="Value", ascending=False).hea
 
 |Item  | Value|
 |:-------|-----:|
-Other forest	|	2.952522e+07
+Other forest	|	2.952491e+07
 Woody savanna	|	1.180380e+07
 Humid tropical forest	|	1.146947e+07
-Grassland	|	9.088783e+06
-Savanna	|	7.766206e+06
-Open shrubland	|	3.090104e+05
-Closed shrubland	|	5.624728e+04
+Grassland	|	8.249579e+06
+Savanna	|	7.762407e+06	
+Open shrubland	|	1.553655e+05
+Closed shrubland	|	5.010989e+04
 
-- From the selected countries in south Asia, the most burned item type is **Other forest** with value of **2.952522e+07**
+- From the subcontinent countries, the most burned item type was **Other forest** with value of **2.952522e+07**
 
 - Least burned item type is **Closed shrubland** with value of **5.624728e+04**
 
@@ -383,40 +402,40 @@ df_selected.groupby("Year").sum().sort_values(by="Value", ascending=False)
 
 |Year |Value|
 |:-------|-----:|
-2009	|	5.714089e+06
-2012	|	5.213439e+06
-2010	|	4.137277e+06
-2017	|	3.678856e+06
-2018	|	3.413934e+06
-2004	|	3.287813e+06
-2007	|	2.961845e+06
-2013	|	2.921003e+06
-2014	|	2.766442e+06
-2016	|	2.717386e+06
-2008	|	2.498098e+06
-2011	|	2.491687e+06
-1995	|	2.338895e+06
-1994	|	2.338895e+06
-1993	|	2.338895e+06
-1991	|	2.338895e+06
-1992	|	2.338895e+06
-1990	|	2.338895e+06
-2006	|	2.243740e+06
-2003	|	2.178761e+06
-2019	|	1.923328e+06
-2015	|	1.897175e+06
-2005	|	1.862174e+06
-2001	|	1.099192e+06
-2002	|	6.803164e+05
-1999	|	6.271583e+05
-1998	|	4.767263e+05
-1996	|	4.493037e+05
-2000	|	4.126897e+05
-1997	|	3.329337e+05
+2009	|	5.705159e+06
+2012	|	5.201674e+06
+2010	|	4.037667e+06
+2017	|	3.677225e+06
+2018	|	3.413118e+06
+2004	|	3.239376e+06
+2007	|	2.952916e+06
+2013	|	2.908165e+06
+2014	|	2.762922e+06
+2016	|	2.710776e+06
+2011	|	2.484390e+06
+2008	|	2.388524e+06
+1995	|	2.302982e+06
+1994	|	2.302982e+06
+1993	|	2.302982e+06
+1991	|	2.302982e+06
+1992	|	2.302982e+06
+1990	|	2.302982e+06
+2006	|	2.230222e+06
+2003	|	1.952966e+06
+2019	|	1.895419e+06
+2015	|	1.893740e+06
+2005	|	1.841006e+06
+2001	|	1.098290e+06
+2002	|	6.435178e+05
+1999	|	5.964729e+05
+1998	|	4.256860e+05
+1996	|	4.232155e+05
+2000	|	3.992597e+05
+1997	|	3.143008e+05
 
-- From the above table it is clear the most area burned in a year is in year **2009** with value of **5.714089e+06**
+- From the above table it is clear the most area burned in a year is in year **2009** with value of **5.705159e+06**
 
-- Minimum area burned in a year is in year **1997** with value of **3.329337e+05**
+- Minimum area burned in a year is in year **1997** with value of **3.143008e+05**
 
 ## 4. Graphical analysis of selected countries
 
@@ -434,7 +453,39 @@ plt.title("Fires by year and area")
 
 - Above graph is visualized to show the fires by year and area of selected countries with the style of line for the item type.
 
+## 5.Graph of subcontinent countries showing yearly fire area
+
+- Graph of subcontinent countries showing yearly fire area
+
+```python
+fig = px.line(df2, x="Year", y="Value",color='Area', title='Subcontinent Burned Area')
+fig.show()
+```
+
+![](newplot%20Subcontinent.png)
+
 
 # **Conclusion**
 
-- 
+- ## 1. For World
+
+    - The highest value of land burned was in year **2012** which **8.320688e+08**
+    - The lowest value of land burned was in year **1997** which is **3.022354e+08**
+    - **Australia** is most affected country with area affected was **2.650662e+09**
+    - **Savanna** is most burned item type with value of **1.957280e+09**
+    - **Closed shrubland** is least burned item type with value of **9.897531e+07**
+    - For most Forest and Savanna burned in a year in a country **Australia** has 10 top values of the burned area in a country in a year.
+    - For most Forest and Savanna burned in a year **Savanna** has the highest value which is **3.487667e+08** in year **2005**
+    - For most Forest and Savanna burned in a year in a country **Open shrubland** has the highest value which is **1.052085e+08** in year **2011** in **Australia**
+    - **Open shrubland** and **Savanna** are in top 10  item type most burned in **Australia** in a year.
+
+
+
+- ## 2. Subcontinent countries Analysis
+
+    - **India** is the most affected country from Subcontinent with value of **6.546250e+07**
+    - **Pakistan** is least affected country from Sub continent with value of **1.015368e+06**
+    - From the subcontinent countries, the most burned item type was **Other forest** with value of **2.952522e+07**
+    - Least burned item type is **Closed shrubland** with value of **5.624728e+04**
+    - Most area burned in a year in subcontinent was in year **2009** having value **5.705159e+06**
+    - Minimum area burned in a year in subcontinent was in year **1997** having value **3.143008e+05**
